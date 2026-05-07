@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Supermercado+One&display=swap" rel="stylesheet">
+    <style>
+        *{ 
+            font-family: "Black Han Sans","Supermercado One", Arial, Helvetica, sans-serif;
+            font-weight: 200;
+            margin: 0; padding: 0; box-sizing: border-box; 
+        }
+        body{ line-height: 1.6; }
+        header{
+            /* background-color: rgb(245,245,245); */
+            width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            /* padding: 50px;  모든방향으로 상하좌우 50px */
+        }
+        nav{
+            /* 안에 있는 요소들이 가로로 나오기 시작한다. */
+            display: flex;
+            /* left right center space-between */
+            justify-content: space-between;
+        }
+        nav ul{
+            display: flex;
+        }
+        nav ul li{
+            list-style: none; /* 동그라미 없애기 */
+            /* padding: 15px 25px; */
+        }
+        nav ul li a{
+            line-height: 45px;
+            padding: 15px 25px;
+            text-decoration: none;
+            margin-left: 30px;
+            color: rgb(10,10,10);
+            font-size: 25px; /* 기본 16px */
+        }
+        nav ul li a:hover{
+            color: rgb(100,100,100);
+            /* 오른쪽 아래 번짐정도 색상 */
+            text-shadow: 5px 5px 5px rgb(100,100,100);
+        }
+        .hi{
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center; /* 글자는 중간으로 */
+            /* display: flex;
+            justify-content: center; */
+        }
+        .slide-item{
+            height: 450px;
+            display: flex !important;   /* 다른 속성들 무시 하고 플레스 속성 덮어씌움 */
+            justify-content: center;    /* 가로 중간*/
+            align-items: center;        /* 세로 중간*/
+        }
+        .item1{ color: white; background-color: rgb(100,220,200); }
+        .item2{ color: white; background-color: rgb(200,220,200); }
+        .item3{ color: white; background-color: rgb(220,220,250); }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <h1>로고</h1>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Service</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <section style="width: 100%;overflow: hidden;">
+        <div class="slider">
+            <div class="slide-item item1"><h1>First slide</h1></div>
+            <div class="slide-item item2"><h1>Second Slide</h1></div>
+            <div class="slide-item item3"><h1>Third Slide</h1></div>
+        </div>
+    </section>
+
+    <section class="hi">
+        <h1>안녕</h1>
+        <p>간단한 메인 화면 구성 예시입니다. HTML과 CSS, 그리고 jQuery 플러그인을 활용했습니다.</p>
+    </section>
+
+    <footer style="text-align: center;">
+        <h1>내가 홈페이지 만듬</h1>
+        <h2>copy right all reserved</h2>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
