@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간식 추천</title>
+    <style>
+        body {
+            background-color: rgb(245, 245, 245);
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+        h1 {
+            color: rgb(50, 80, 160);
+        }
+
+        .wrap {
+            width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .menu_box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgb(235, 242, 255);
+            border-radius: 10px;
+        }
+
+        .menu_box li {
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 400px;
+            height: 34px;
+        }
+
+        button {
+            height: 38px;
+            background-color: rgb(50, 80, 160);
+            /* 배경색지정 */
+            color: white;
+            /* 글자색 하얀색 */
+            border: none;
+            /* 테두리선 없음. */
+            border-radius: 6px;
+            cursor: pointer;
+            /* 버튼에 마우스 가까이 가면 손모양 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1>우리반 간식 소개 & 추천</h1>
+        <p>친구들과 먹고 싶은 간식을 소개하고 추첨하는 웹 페이지입니다.</p>
+
+        <img src="snackbar-hero.png">
+        <div class="menu_box">
+            <h2>인기간식</h2>
+            <ul id="menu_list">
+                <!-- <li>asdf</li> javascript li 추가하기 -->
+            </ul>
+        </div>
+        <div class="menu_box">
+            <h2>간식 추가하기</h2>
+            <input type="text" name="" id="input_snack">
+            <button id="btn_add">추가</button>
+        </div>
+    </div>
+    <script>
+        const snacks = ["치즈 토스트", "딸기 에이드", "초코 쿠키"];
+
+        // li태그 추가함수
+        const renderSnack = function (snack) {
+            console.log('renderSnack' + snack);
+            // li 태그 생성
+            const li1 = document.createElement('li');
+            // li 태그 안에 글자 내용을 치즈토스트로 설정
+            li1.textContent = snack;
+            // ul 태그 menu_list 에 li 자식 추가하기 
+            document.getElementById('menu_list').appendChild(li1);
+        }
+        // 배열 기준으로 li 태그 추가 함수 호출
+        for (let i = 0; i < snacks.length; i++) {
+            renderSnack(snacks[i]);
+        }
+
+        document.getElementById("btn_add").onclick = function(){
+            const snack = document.getElementById('input_snack').value;
+            console.log(snack);
+        }
+    </script>
+</body>
+
+</html>
