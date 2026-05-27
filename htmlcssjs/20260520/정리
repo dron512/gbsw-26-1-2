@@ -1,0 +1,28 @@
+1. 데이터베이스접속
+warp 키거나 다른 WIFI접속시 네트워크 다르다.
+(네트워크가 동일해야 한다)
+heidiSQL 프로그램으로 각 PC에 접속가능하다.
+
+2. 스키마(데이터베이스) 생성
+create database 데이터베이스명;
+create database pmh;
+
+3. 테이블 생성
+create table aa0(
+    title varchar(200) null,
+    content varchar(200) null
+);
+
+4. 테이블안에 행삽입
+insert into aa0 (title, content) values ('안녕','mysql');
+
+5. 테이블 행 삭제
+DELETE FROM `pmh`.`aa0` 
+WHERE  `title`='다음시간' AND `content`='쉬는시간' LIMIT 1;
+
+6. 테이블 행 수정
+UPDATE `pmh`.`aa0` SET `content`='좋아해라' 
+WHERE  `title`='아' AND `content`='싫어..' LIMIT 1;
+
+7. 테이블 모든 행 조회
+SELECT * FROM aa0;
