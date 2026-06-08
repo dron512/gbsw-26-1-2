@@ -1,9 +1,12 @@
+// express 웹서버 모듈
 const express = require('express');
+// mysql 연결하는 모듈
 const mysql = require('mysql2/promise');
+// path 관리하는 모듈
 const path = require('path');
 
-console.log(__dirname);
-console.log(path.join(__dirname,"test.html"))
+// console.log(__dirname);
+// console.log(path.join(__dirname,"test.html"))
 
 const app = express();
 const PORT = 3000;
@@ -56,7 +59,7 @@ app.get("/",(req,res)=>{
 // res.sendFile -> 파일 전송...
 
 app.get("/test",(req,res)=>{
-    res.sendFile("test.html");
+    res.sendFile(path.join(__dirname,"test.html"));
 })
 
 app.get("/users", async (req, res) => {
