@@ -1,13 +1,21 @@
 const express = require('express');
 const mysql = require('mysql2/promise');
+const path = require('path');
+
+console.log(__dirname);
+console.log(path.join(__dirname,"test.html"))
+
 const app = express();
 const PORT = 3000;
+
+// mysql 3306
+// 1.localhost 2.127.0.0.1 3.172.28.2.57
 
 const pool = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "1234",
-    database: "gbsw",
+    database: "a3",
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
@@ -43,11 +51,22 @@ app.get("/",(req,res)=>{
     res.send("main페이지");
 });
 
+// res.send() -> 브라우저 글자 전송
+// res.json() -> 자바스크립트 객체를 전송
+// res.sendFile -> 파일 전송...
+
+app.get("/test",(req,res)=>{
+    res.sendFile("test.html");
+})
+
 app.get("/users", async (req, res) => {
     // console.log(req.ip + "누가 백엔드로 요청함");
     // res.json({ msg: "성공" });
     try{
+        // const [a,b] = [10,20];
+        // const [rows] = [[{id:1,name:"홍길동",email:"aaa@naver.com"}],[]]
         const [rows] = await pool.query('select * from users');
+        console.log(rows);
         res.json(rows);
     }catch(e){
         console.log(e);
